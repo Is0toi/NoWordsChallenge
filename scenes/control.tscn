@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=4 uid="uid://bi4wckfs54v2b"]
+[gd_scene load_steps=123 format=4 uid="uid://bi4wckfs54v2b"]
 
 [ext_resource type="Script" uid="uid://bpdlywn10n5sp" path="res://scenes/scripts/world.gd" id="1_lt2xq"]
 [ext_resource type="Texture2D" uid="uid://cmu0ablr5kslt" path="res://assets/Tiles/tile_0001.png" id="2_1p5nq"]
@@ -56,6 +56,7 @@
 [ext_resource type="Texture2D" uid="uid://c3000voms1f22" path="res://assets/Tiles/tile_0063.png" id="52_lmvqu"]
 [ext_resource type="Texture2D" uid="uid://dy47esc1b7i7c" path="res://assets/Tiles/tile_0072.png" id="53_4u7im"]
 [ext_resource type="Texture2D" uid="uid://ct1t71yq8ekd2" path="res://assets/Tiles/tile_0073.png" id="54_yddfj"]
+[ext_resource type="Texture2D" uid="uid://co4lc6dw6kx7y" path="res://assets/Custom_Art/pixil-frame-0 (4).png" id="57_ce2u3"]
 [ext_resource type="Texture2D" uid="uid://jge1r6jgsc4t" path="res://assets/Custom_Art/pixil-frame-0 (1).png" id="58_ce2u3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sky72"]
@@ -389,7 +390,7 @@ sources/49 = SubResource("TileSetAtlasSource_k4skk")
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("57_ce2u3")
 }],
 "loop": true,
 "name": &"new_animation",
@@ -479,8 +480,13 @@ animation = &"new_animation"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/CharacterBody2D"]
 polygon = PackedVector2Array(5, 0, 2, 0, 0, 3, 0, 10, 1, 14, 2, 17, 8, 17, 11, 14, 11, 1, 8, 0)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(-264, -116)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
+polygon = PackedVector2Array(-2, -9, -6, -7, -5, 1, -4, 6, 2, 6, 4, -6)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_dl5dp")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
