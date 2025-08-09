@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bi4wckfs54v2b"]
+[gd_scene load_steps=15 format=4 uid="uid://bi4wckfs54v2b"]
 
 [ext_resource type="Script" uid="uid://bpdlywn10n5sp" path="res://world.gd" id="1_0fbet"]
 [ext_resource type="Texture2D" uid="uid://cmu0ablr5kslt" path="res://assets/Tiles/tile_0001.png" id="2_kbped"]
@@ -41,6 +41,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iy58a"]
+radius = 8.0
+height = 22.0
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 0
@@ -68,6 +72,10 @@ zoom = Vector2(3, 3)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="World/CharacterBody2D"]
 position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_6a6wx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/CharacterBody2D"]
+position = Vector2(8, 8)
+shape = SubResource("CapsuleShape2D_iy58a")
 
 [node name="Collisions" type="StaticBody2D" parent="."]
 
