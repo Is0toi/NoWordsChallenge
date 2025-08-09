@@ -1,4 +1,4 @@
-[gd_scene load_steps=127 format=4 uid="uid://bi4wckfs54v2b"]
+[gd_scene load_steps=129 format=4 uid="uid://bi4wckfs54v2b"]
 
 [ext_resource type="Script" uid="uid://bpdlywn10n5sp" path="res://scenes/scripts/world.gd" id="1_lt2xq"]
 [ext_resource type="Texture2D" uid="uid://cmu0ablr5kslt" path="res://assets/Tiles/tile_0001.png" id="2_1p5nq"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://ytc4rth8m7of" path="res://assets/Tiles/tile_0084.png" id="13_dl5dp"]
 [ext_resource type="Texture2D" uid="uid://dwjcgutnpalle" path="res://assets/Tiles/tile_0052.png" id="14_f1e5p"]
 [ext_resource type="Texture2D" uid="uid://cbi2ydhgs2rkx" path="res://assets/Tiles/tile_0053.png" id="15_vx2dq"]
+[ext_resource type="Texture2D" uid="uid://c8dg0c7nsmnjr" path="res://assets/Tiles/tile_0004.png" id="16_f1e5p"]
 [ext_resource type="Texture2D" uid="uid://bgbl41f6qh0aa" path="res://assets/Tiles/tile_0054.png" id="16_oc3vt"]
 [ext_resource type="Texture2D" uid="uid://ti2jrp55e6qk" path="res://assets/Tiles/tile_0050.png" id="17_etixm"]
 [ext_resource type="Texture2D" uid="uid://2drikany32oq" path="res://assets/Tiles/tile_0055.png" id="18_4w3tc"]
@@ -59,7 +60,7 @@
 [ext_resource type="Texture2D" uid="uid://ct1t71yq8ekd2" path="res://assets/Tiles/tile_0073.png" id="54_yddfj"]
 [ext_resource type="Texture2D" uid="uid://co4lc6dw6kx7y" path="res://assets/Custom_Art/pixil-frame-0 (4).png" id="57_ce2u3"]
 [ext_resource type="Texture2D" uid="uid://jge1r6jgsc4t" path="res://assets/Custom_Art/pixil-frame-0 (1).png" id="58_ce2u3"]
-[ext_resource type="PackedScene" uid="uid://dolh3ewernoar" path="res://scenes/apple.tscn" id="60_dl5dp"]
+[ext_resource type="PackedScene" path="res://scenes/apple.tscn" id="60_dl5dp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sky72"]
 texture = ExtResource("2_1p5nq")
@@ -143,6 +144,10 @@ texture = ExtResource("13_dl5dp")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f1e5p"]
 texture = ExtResource("7_hlutc")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vx2dq"]
+texture = ExtResource("16_f1e5p")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xl5uj"]
@@ -397,6 +402,7 @@ sources/47 = SubResource("TileSetAtlasSource_3hr0c")
 sources/48 = SubResource("TileSetAtlasSource_jafnj")
 sources/49 = SubResource("TileSetAtlasSource_k4skk")
 sources/13 = SubResource("TileSetAtlasSource_f1e5p")
+sources/15 = SubResource("TileSetAtlasSource_vx2dq")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hob4j"]
 animations = [{
@@ -475,7 +481,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAD+////AQAAAAA
 tile_set = SubResource("TileSet_am1vj")
 
 [node name="Layer2" type="TileMapLayer" parent="World/TileMap"]
-tile_map_data = PackedByteArray("AAD2//X/AgAAAAAAAAD1//X/AwAAAAAAAAD1//b/BwAAAAAAAAD2//b/BgAAAAAAAAD2//f/CwAAAAAAAAD1//f/HgAAAAAAAADy//b/BAAAAAAAAADy//X/AAAAAAAAAADz//X/AQAAAAAAAAD0//X/AQAAAAAAAADz//b/BQAAAAAAAAD0//b/BQAAAAAAAADy//f/CAAAAAAAAADz//f/DAAAAAAAAAD0//f/CQAAAAAAAADr//z/CwAAAAAAAADr//v/BgAAAAAAAADn//r/AAAAAAAAAADo//r/AwAAAAAAAADp//r/AQAAAAAAAADq//r/AQAAAAAAAADr//r/AgAAAAAAAADn//v/BAAAAAAAAADn//z/CAAAAAAAAADo//z/CQAAAAAAAADp//z/CQAAAAAAAADq//z/CQAAAAAAAADo//v/BQAAAAAAAADp//v/BQAAAAAAAADq//v/BQAAAAAAAADx//v/IgAAAAAAAADw//v/IwAAAAAAAADv//v/IwAAAAAAAADu//v/IwAAAAAAAADt//v/JAAAAAAAAAD1//v/HQAAAAAAAADu//X/EwAAAAAAAADt//X/EgAAAAAAAADs//X/EgAAAAAAAADr//X/EgAAAAAAAADq//X/EQAAAAAAAADq//b/FQAAAAAAAADr//b/FgAAAAAAAADs//b/FgAAAAAAAADt//b/GAAAAAAAAADu//b/FwAAAAAAAADq//f/GQAAAAAAAADr//f/DAAAAAAAAADs//f/GgAAAAAAAADt//f/HwAAAAAAAADu//f/HAAAAAAAAADn//3/CAAAAAAAAADo//3/DAAAAAAAAADp//3/CQAAAAAAAADq//3/HgAAAAAAAADr//3/CwAAAAAAAAD6//P/LgAAAAAAAAD6//b/JwAAAAAAAAD+//b/KQAAAAAAAAD+//P/MAAAAAAAAAD7//P/LwAAAAAAAAD8//P/LwAAAAAAAAD9//P/LwAAAAAAAAD6//T/LQAAAAAAAAD6//X/LQAAAAAAAAD+//T/LQAAAAAAAAD+//X/LQAAAAAAAAD7//b/LwAAAAAAAAD9//b/LwAAAAAAAAD8//b/KAAAAAAAAAD9//f/KwAAAAAAAAD+//f/JQAAAAAAAADs/+v/DQAAAAAAAADv/+z/DQAAAAAAAADt/+3/DQAAAAAAAADw/+r/DQAAAAAAAAD0/+r/DQAAAAAAAAD2/+v/DQAAAAAAAAD3/+z/DQAAAAAAAAD5/+v/DQAAAAAAAAD5/+3/DQAAAAAAAAD8/+v/DQAAAAAAAAD8/+3/DQAAAAAAAAD7/+z/DQAAAAAAAAD+/+z/DQAAAAAAAAD//+3/DQAAAAAAAAD//+v/DQAAAAAAAAD7/+r/DQAAAAAAAAD4/+r/DQAAAAAAAADt/+n/DQAAAAAAAADq/+3/DQAAAAAAAADp/+v/DQAAAAAAAADo/+7/DQAAAAAAAADu/+v/DQAAAAAAAADp//D/DQAAAAAAAADn//H/DQAAAAAAAADm//D/DQAAAAAAAADn/+3/DQAAAAAAAADr/+7/DQAAAAAAAADr/+r/DQAAAAAAAADl//L/DQAAAAAAAAAAAO7/DQAAAAAAAAD+/+7/DQAAAAAAAADm//P/DQAAAAAAAADo//L/DQAAAAAAAAD6/+7/DQAAAAAAAADj//b/DQAAAAAAAADk//P/DQAAAAAAAADl//X/DQAAAAAAAAABAO//DQAAAAAAAADz/+3/DQAAAAAAAAD1/+3/DQAAAAAAAAD0/+z/DQAAAAAAAADy/+v/DQAAAAAAAADx/+z/DQAAAAAAAADr/+z/DQAAAAAAAADo/+z/DQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD2//X/AgAAAAAAAAD1//X/AwAAAAAAAAD1//b/BwAAAAAAAAD2//b/BgAAAAAAAAD2//f/CwAAAAAAAAD1//f/HgAAAAAAAADy//b/BAAAAAAAAADy//X/AAAAAAAAAADz//X/AQAAAAAAAAD0//X/AQAAAAAAAADz//b/BQAAAAAAAAD0//b/BQAAAAAAAADy//f/CAAAAAAAAADz//f/DAAAAAAAAAD0//f/CQAAAAAAAADr//z/CwAAAAAAAADr//v/BgAAAAAAAADn//r/AAAAAAAAAADo//r/AwAAAAAAAADp//r/AQAAAAAAAADq//r/AQAAAAAAAADr//r/AgAAAAAAAADn//v/BAAAAAAAAADn//z/CAAAAAAAAADo//z/CQAAAAAAAADp//z/CQAAAAAAAADq//z/CQAAAAAAAADo//v/BQAAAAAAAADp//v/BQAAAAAAAADq//v/BQAAAAAAAADx//v/IgAAAAAAAADw//v/IwAAAAAAAADv//v/IwAAAAAAAADu//v/IwAAAAAAAADt//v/JAAAAAAAAAD1//v/HQAAAAAAAADu//X/EwAAAAAAAADt//X/EgAAAAAAAADs//X/EgAAAAAAAADr//X/EgAAAAAAAADq//X/EQAAAAAAAADq//b/FQAAAAAAAADr//b/FgAAAAAAAADs//b/FgAAAAAAAADt//b/GAAAAAAAAADu//b/FwAAAAAAAADq//f/GQAAAAAAAADr//f/DAAAAAAAAADs//f/GgAAAAAAAADt//f/HwAAAAAAAADu//f/HAAAAAAAAADn//3/CAAAAAAAAADo//3/DAAAAAAAAADp//3/CQAAAAAAAADq//3/HgAAAAAAAADr//3/CwAAAAAAAAD6//P/LgAAAAAAAAD6//b/JwAAAAAAAAD+//b/KQAAAAAAAAD+//P/MAAAAAAAAAD7//P/LwAAAAAAAAD8//P/LwAAAAAAAAD9//P/LwAAAAAAAAD6//T/LQAAAAAAAAD6//X/LQAAAAAAAAD+//T/LQAAAAAAAAD+//X/LQAAAAAAAAD7//b/LwAAAAAAAAD9//b/LwAAAAAAAAD8//b/KAAAAAAAAAD9//f/KwAAAAAAAAD+//f/JQAAAAAAAADs/+v/DQAAAAAAAADv/+z/DQAAAAAAAADt/+3/DQAAAAAAAADw/+r/DQAAAAAAAAD0/+r/DQAAAAAAAAD2/+v/DQAAAAAAAAD3/+z/DQAAAAAAAAD5/+v/DQAAAAAAAAD5/+3/DQAAAAAAAAD8/+v/DQAAAAAAAAD8/+3/DQAAAAAAAAD7/+z/DQAAAAAAAAD+/+z/DQAAAAAAAAD//+3/DQAAAAAAAAD//+v/DQAAAAAAAAD7/+r/DQAAAAAAAAD4/+r/DQAAAAAAAADt/+n/DQAAAAAAAADq/+3/DQAAAAAAAADp/+v/DQAAAAAAAADo/+7/DQAAAAAAAADu/+v/DQAAAAAAAADp//D/DQAAAAAAAADn//H/DQAAAAAAAADm//D/DQAAAAAAAADn/+3/DQAAAAAAAADr/+7/DQAAAAAAAADr/+r/DQAAAAAAAADl//L/DQAAAAAAAAAAAO7/DQAAAAAAAAD+/+7/DQAAAAAAAADm//P/DQAAAAAAAADo//L/DQAAAAAAAAD6/+7/DQAAAAAAAADj//b/DQAAAAAAAADk//P/DQAAAAAAAADl//X/DQAAAAAAAAABAO//DQAAAAAAAADz/+3/DQAAAAAAAAD1/+3/DQAAAAAAAAD0/+z/DQAAAAAAAADy/+v/DQAAAAAAAADx/+z/DQAAAAAAAADr/+z/DQAAAAAAAADo/+z/DQAAAAAAAADj//X/DwAAAAAAAADl//T/DwAAAAAAAADk//L/DwAAAAAAAADl//H/DwAAAAAAAADm//L/DwAAAAAAAADo//H/DwAAAAAAAADn//D/DwAAAAAAAADm/+//DwAAAAAAAADp/+//DwAAAAAAAADo/+3/DwAAAAAAAADn/+z/DwAAAAAAAADo/+v/DwAAAAAAAADp/+r/DwAAAAAAAADr/+n/DwAAAAAAAADt/+j/DwAAAAAAAADs/+r/DwAAAAAAAADr/+v/DwAAAAAAAADq/+z/DwAAAAAAAADr/+3/DwAAAAAAAADt/+z/DwAAAAAAAADu/+r/DwAAAAAAAADw/+n/DwAAAAAAAADv/+v/DwAAAAAAAADx/+v/DwAAAAAAAADy/+r/DwAAAAAAAAD0/+n/DwAAAAAAAAD0/+v/DwAAAAAAAADz/+z/DwAAAAAAAAD1/+z/DwAAAAAAAAD2/+r/DwAAAAAAAAD4/+n/DwAAAAAAAAD3/+v/DwAAAAAAAAD5/+r/DwAAAAAAAAD5/+z/DwAAAAAAAAD6/+3/DwAAAAAAAAD7/+v/DwAAAAAAAAD7/+n/DwAAAAAAAAD8/+r/DwAAAAAAAAD8/+z/DwAAAAAAAAD+/+v/DwAAAAAAAAD+/+3/DwAAAAAAAAD//+z/DwAAAAAAAAD//+r/DwAAAAAAAAAAAO3/DwAAAAAAAAABAO7/DwAAAAAAAAA=")
 tile_set = SubResource("TileSet_32muj")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="World"]
