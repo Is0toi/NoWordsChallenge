@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://bi4wckfs54v2b"]
+[gd_scene load_steps=18 format=4 uid="uid://bi4wckfs54v2b"]
 
 [ext_resource type="Script" uid="uid://bpdlywn10n5sp" path="res://scenes/scripts/world.gd" id="1_lt2xq"]
 [ext_resource type="Texture2D" uid="uid://cmu0ablr5kslt" path="res://assets/Tiles/tile_0001.png" id="2_1p5nq"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://c0lvlrjym5vi5" path="res://scenes/scripts/character_body_2d.gd" id="6_kql7n"]
 [ext_resource type="Texture2D" uid="uid://c5tacw4f56yqw" path="res://assets/Tiles/tile_0029.png" id="7_tac8f"]
 [ext_resource type="PackedScene" uid="uid://cneaeq57fho8k" path="res://scenes/fire.tscn" id="8_1p5nq"]
+[ext_resource type="Texture2D" uid="uid://dijkf0vcx0dxx" path="res://assets/pixilart-drawing (3).png" id="9_hob4j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sky72"]
 texture = ExtResource("2_1p5nq")
@@ -34,6 +35,21 @@ sources/1 = SubResource("TileSetAtlasSource_0ytqx")
 sources/2 = SubResource("TileSetAtlasSource_pxugv")
 sources/3 = SubResource("TileSetAtlasSource_eh0v1")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_hob4j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_hob4j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iy58a"]
+radius = 8.0
+height = 22.0
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_6a6wx"]
 animations = [{
 "frames": [{
@@ -44,10 +60,6 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iy58a"]
-radius = 8.0
-height = 22.0
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -76,11 +88,11 @@ script = ExtResource("6_kql7n")
 zoom = Vector2(3, 3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="World/CharacterBody2D"]
-position = Vector2(8, 8)
-sprite_frames = SubResource("SpriteFrames_6a6wx")
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_hob4j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/CharacterBody2D"]
-position = Vector2(8, 8)
+position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_iy58a")
 
 [node name="Collisions" type="StaticBody2D" parent="."]
@@ -91,3 +103,7 @@ polygon = PackedVector2Array(-1, -95, 0, -50, -81, -48, -78, 49, -1, 49, -1, 67,
 [node name="AnimatedSprite2D" parent="." instance=ExtResource("8_1p5nq")]
 position = Vector2(45, 1)
 scale = Vector2(0.5625, 0.5625)
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_6a6wx")
