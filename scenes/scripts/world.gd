@@ -3,7 +3,6 @@ extends Node2D
 const TILE_SIZE = 16
 
 @onready var tile_map = $TileMap
-@onready var player = $Player
 @onready var control = get_node(".")
 
 var player_tile
@@ -11,10 +10,6 @@ var map = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
 	pass
 
 func tile_to_id(x: int, y: int) -> int:
