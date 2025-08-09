@@ -2,6 +2,7 @@ extends CharacterBody2D
 @onready var bubble: AnimatedSprite2D = $AnimatedSprite2D2
 var player_in_range := false
 
+
 func _ready():
 	$AnimatedSprite2D.play("default")
 	$InteractionZone.body_entered.connect(_on_body_entered)

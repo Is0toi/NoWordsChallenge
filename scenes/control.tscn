@@ -1,4 +1,4 @@
-[gd_scene load_steps=144 format=4 uid="uid://bi4wckfs54v2b"]
+[gd_scene load_steps=147 format=4 uid="uid://bi4wckfs54v2b"]
 
 [ext_resource type="Script" uid="uid://bpdlywn10n5sp" path="res://scenes/scripts/world.gd" id="1_lt2xq"]
 [ext_resource type="Texture2D" uid="uid://cmu0ablr5kslt" path="res://assets/Tiles/tile_0001.png" id="2_1p5nq"]
@@ -61,8 +61,9 @@
 [ext_resource type="Texture2D" uid="uid://co4lc6dw6kx7y" path="res://assets/Custom_Art/pixil-frame-0 (4).png" id="57_ce2u3"]
 [ext_resource type="Texture2D" uid="uid://jge1r6jgsc4t" path="res://assets/Custom_Art/pixil-frame-0 (1).png" id="58_ce2u3"]
 [ext_resource type="PackedScene" uid="uid://dolh3ewernoar" path="res://scenes/apple.tscn" id="60_dl5dp"]
-[ext_resource type="Script" path="res://scenes/villager_3.gd" id="60_oc3vt"]
+[ext_resource type="Script" uid="uid://byyjpaaeylqqv" path="res://scenes/villager_3.gd" id="60_oc3vt"]
 [ext_resource type="Texture2D" uid="uid://dc5s5vqo0ugng" path="res://assets/Emotes/emote_cash.png" id="60_vx2dq"]
+[ext_resource type="Texture2D" uid="uid://qn1ks7acskfa" path="res://assets/Emotes/emote_heart.png" id="63_nk3x5"]
 [ext_resource type="Script" uid="uid://cu0vd77gadktf" path="res://scenes/villager.gd" id="64_3kxc3"]
 [ext_resource type="Texture2D" uid="uid://bosw48uttu5n7" path="res://assets/Emotes/emote_circle.png" id="65_nk3x5"]
 [ext_resource type="Script" uid="uid://6iwojcblucg3" path="res://scenes/villager_2.gd" id="66_cjlmj"]
@@ -457,6 +458,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjlmj"]
+atlas = ExtResource("63_nk3x5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3kxc3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjlmj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_d77h8"]
 atlas = ExtResource("58_ce2u3")
 region = Rect2(64, 32, 32, 32)
@@ -578,10 +594,17 @@ position = Vector2(1, -1.5)
 shape = SubResource("RectangleShape2D_4w3tc")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Villager3"]
+visible = false
 position = Vector2(6, -17)
 sprite_frames = SubResource("SpriteFrames_4w3tc")
 
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Villager3"]
+visible = false
+position = Vector2(8, -20)
+sprite_frames = SubResource("SpriteFrames_3kxc3")
+
 [node name="Apple" parent="." instance=ExtResource("60_dl5dp")]
+visible = false
 position = Vector2(-201, -297)
 
 [node name="Villager" type="CharacterBody2D" parent="."]

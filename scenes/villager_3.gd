@@ -1,5 +1,7 @@
 extends CharacterBody2D
 @onready var bubble: AnimatedSprite2D = $AnimatedSprite2D2
+@onready var apple: Node2D = $"../Apple"
+@onready var done: AnimatedSprite2D = $AnimatedSprite2D3
 var player_in_range := false
 
 func _ready():
@@ -17,5 +19,11 @@ func _on_body_exited(body):
 		
 func _process(delta):
 	if player_in_range and Input.is_action_just_pressed("interact"):
-		bubble.visible = !bubble.visible
+		if apple.visible:
+			bubble.visible = !bubble.visible
+		else:
+			bubble.visible = false
+			done.visible = !done.visible
+			
+			
 	
