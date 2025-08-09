@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=115 format=4 uid="uid://bi4wckfs54v2b"]
+=======
+[gd_scene load_steps=15 format=4 uid="uid://bi4wckfs54v2b"]
+>>>>>>> b0dbeafee66749d356ce11add582d73d26cb7b85
 
 [ext_resource type="Script" uid="uid://bpdlywn10n5sp" path="res://scenes/scripts/world.gd" id="1_lt2xq"]
 [ext_resource type="Texture2D" uid="uid://cmu0ablr5kslt" path="res://assets/Tiles/tile_0001.png" id="2_1p5nq"]
@@ -7,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ci6q828di0wbc" path="res://assets/Tiles/tile_0003.png" id="5_exs80"]
 [ext_resource type="Texture2D" uid="uid://b0nl4wq1djjd6" path="res://assets/Tiles/tile_0012.png" id="6_01bab"]
 [ext_resource type="Script" uid="uid://c0lvlrjym5vi5" path="res://scenes/scripts/character_body_2d.gd" id="6_kql7n"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://8udsllxmwj08" path="res://assets/Tiles/tile_0013.png" id="7_exs80"]
 [ext_resource type="Texture2D" uid="uid://bvkx4hvogfgxc" path="res://assets/Tiles/tile_0017.png" id="8_kql7n"]
 [ext_resource type="Texture2D" uid="uid://cphdd70trk31t" path="res://assets/Tiles/tile_0043.png" id="9_1l3m6"]
@@ -56,6 +61,9 @@
 [ext_resource type="Texture2D" uid="uid://c3000voms1f22" path="res://assets/Tiles/tile_0063.png" id="52_lmvqu"]
 [ext_resource type="Texture2D" uid="uid://dy47esc1b7i7c" path="res://assets/Tiles/tile_0072.png" id="53_4u7im"]
 [ext_resource type="Texture2D" uid="uid://ct1t71yq8ekd2" path="res://assets/Tiles/tile_0073.png" id="54_yddfj"]
+=======
+[ext_resource type="Texture2D" uid="uid://dijkf0vcx0dxx" path="res://assets/Custom_Art/pixilart-drawing (3).png" id="9_hob4j"]
+>>>>>>> b0dbeafee66749d356ce11add582d73d26cb7b85
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sky72"]
 texture = ExtResource("2_1p5nq")
@@ -346,7 +354,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hob4j"]
+<<<<<<< HEAD
 size = Vector2(10, 17)
+=======
+size = Vector2(16, 16)
+>>>>>>> b0dbeafee66749d356ce11add582d73d26cb7b85
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -377,9 +389,9 @@ script = ExtResource("6_kql7n")
 zoom = Vector2(3, 3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="World/CharacterBody2D"]
-position = Vector2(1, 0)
+position = Vector2(6, 9)
 sprite_frames = SubResource("SpriteFrames_hob4j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/CharacterBody2D"]
-position = Vector2(0, -0.5)
+position = Vector2(5, 8)
 shape = SubResource("RectangleShape2D_hob4j")
