@@ -10,8 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://8udsllxmwj08" path="res://assets/Tiles/tile_0013.png" id="7_exs80"]
 [ext_resource type="Texture2D" uid="uid://bvkx4hvogfgxc" path="res://assets/Tiles/tile_0017.png" id="8_kql7n"]
 [ext_resource type="Texture2D" uid="uid://cphdd70trk31t" path="res://assets/Tiles/tile_0043.png" id="9_1l3m6"]
-[ext_resource type="Texture2D" uid="uid://dijkf0vcx0dxx" path="res://assets/Custom_Art/pixilart-drawing (3).png" id="9_hob4j"]
-[ext_resource type="PackedScene" uid="uid://qwtuwln7ga6d" path="res://scenes/ocean.tscn" id="10_01bab"]
 [ext_resource type="Texture2D" uid="uid://b10thd3iuu4qh" path="res://assets/Tiles/tile_0048.png" id="10_nenke"]
 [ext_resource type="Texture2D" uid="uid://cxpa447fudpix" path="res://assets/Tiles/tile_0074.png" id="11_ce2u3"]
 [ext_resource type="Texture2D" uid="uid://x3uxt0moio7k" path="res://assets/Tiles/tile_0075.png" id="12_hlutc"]
@@ -57,6 +55,7 @@
 [ext_resource type="Texture2D" uid="uid://c3000voms1f22" path="res://assets/Tiles/tile_0063.png" id="52_lmvqu"]
 [ext_resource type="Texture2D" uid="uid://dy47esc1b7i7c" path="res://assets/Tiles/tile_0072.png" id="53_4u7im"]
 [ext_resource type="Texture2D" uid="uid://ct1t71yq8ekd2" path="res://assets/Tiles/tile_0073.png" id="54_yddfj"]
+[ext_resource type="Texture2D" uid="uid://bvcmo7rtcedv0" path="res://assets/Custom_Art/pixil-frame-0 (2).png" id="56_1l3m6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sky72"]
 texture = ExtResource("2_1p5nq")
@@ -383,10 +382,10 @@ sources/49 = SubResource("TileSetAtlasSource_k4skk")
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_hob4j")
+"texture": ExtResource("56_1l3m6")
 }],
 "loop": true,
-"name": &"default",
+"name": &"new_animation",
 "speed": 5.0
 }]
 
@@ -421,6 +420,8 @@ zoom = Vector2(3, 3)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="World/CharacterBody2D"]
 position = Vector2(6, 9)
 sprite_frames = SubResource("SpriteFrames_hob4j")
+animation = &"new_animation"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/CharacterBody2D"]
+position = Vector2(1, 0)
 polygon = PackedVector2Array(5, 0, 2, 0, 0, 3, 0, 10, 1, 14, 2, 17, 8, 17, 10, 13, 10, 3, 8, 0)
