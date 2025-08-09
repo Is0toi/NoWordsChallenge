@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://bi4wckfs54v2b"]
+[gd_scene load_steps=15 format=4 uid="uid://bi4wckfs54v2b"]
 
 [ext_resource type="Script" uid="uid://bpdlywn10n5sp" path="res://scenes/scripts/world.gd" id="1_lt2xq"]
 [ext_resource type="Texture2D" uid="uid://cmu0ablr5kslt" path="res://assets/Tiles/tile_0001.png" id="2_1p5nq"]
@@ -6,8 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://o2ija1fha77e" path="res://assets/Tiles/tile_0049.png" id="4_01bab"]
 [ext_resource type="Texture2D" uid="uid://ci6q828di0wbc" path="res://assets/Tiles/tile_0003.png" id="5_exs80"]
 [ext_resource type="Script" uid="uid://c0lvlrjym5vi5" path="res://scenes/scripts/character_body_2d.gd" id="6_kql7n"]
-[ext_resource type="Texture2D" uid="uid://c5tacw4f56yqw" path="res://assets/Tiles/tile_0029.png" id="7_tac8f"]
-[ext_resource type="PackedScene" uid="uid://cneaeq57fho8k" path="res://scenes/fire.tscn" id="8_1p5nq"]
 [ext_resource type="Texture2D" uid="uid://dijkf0vcx0dxx" path="res://assets/pixilart-drawing (3).png" id="9_hob4j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sky72"]
@@ -47,18 +45,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hob4j"]
-size = Vector2(10, 17)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_6a6wx"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_tac8f")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+size = Vector2(16, 16)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -85,17 +72,9 @@ script = ExtResource("6_kql7n")
 zoom = Vector2(3, 3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="World/CharacterBody2D"]
-position = Vector2(1, 0)
+position = Vector2(6, 9)
 sprite_frames = SubResource("SpriteFrames_hob4j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/CharacterBody2D"]
-position = Vector2(0, -0.5)
+position = Vector2(5, 8)
 shape = SubResource("RectangleShape2D_hob4j")
-
-[node name="AnimatedSprite2D" parent="." instance=ExtResource("8_1p5nq")]
-position = Vector2(45, 1)
-scale = Vector2(0.5625, 0.5625)
-
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
-position = Vector2(8, 8)
-sprite_frames = SubResource("SpriteFrames_6a6wx")
