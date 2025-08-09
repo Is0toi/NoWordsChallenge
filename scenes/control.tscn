@@ -1,4 +1,4 @@
-[gd_scene load_steps=148 format=4 uid="uid://bi4wckfs54v2b"]
+[gd_scene load_steps=147 format=4 uid="uid://bi4wckfs54v2b"]
 
 [ext_resource type="Script" uid="uid://bpdlywn10n5sp" path="res://scenes/scripts/world.gd" id="1_lt2xq"]
 [ext_resource type="Texture2D" uid="uid://cmu0ablr5kslt" path="res://assets/Tiles/tile_0001.png" id="2_1p5nq"]
@@ -61,13 +61,14 @@
 [ext_resource type="Texture2D" uid="uid://co4lc6dw6kx7y" path="res://assets/Custom_Art/pixil-frame-0 (4).png" id="57_ce2u3"]
 [ext_resource type="Texture2D" uid="uid://jge1r6jgsc4t" path="res://assets/Custom_Art/pixil-frame-0 (1).png" id="58_ce2u3"]
 [ext_resource type="PackedScene" uid="uid://dolh3ewernoar" path="res://scenes/apple.tscn" id="60_dl5dp"]
-[ext_resource type="Script" path="res://scenes/villager_3.gd" id="60_oc3vt"]
+[ext_resource type="Script" uid="uid://byyjpaaeylqqv" path="res://scenes/villager_3.gd" id="60_oc3vt"]
 [ext_resource type="Texture2D" uid="uid://dc5s5vqo0ugng" path="res://assets/Emotes/emote_cash.png" id="60_vx2dq"]
 [ext_resource type="Texture2D" uid="uid://qn1ks7acskfa" path="res://assets/Emotes/emote_heart.png" id="63_nk3x5"]
-[ext_resource type="Script" path="res://scenes/villager.gd" id="64_3kxc3"]
-[ext_resource type="Texture2D" uid="uid://bosw48uttu5n7" path="res://assets/Emotes/emote_circle.png" id="65_nk3x5"]
-[ext_resource type="Script" path="res://scenes/villager_2.gd" id="66_cjlmj"]
-[ext_resource type="Texture2D" uid="uid://dheo5j48vt8j3" path="res://assets/Emotes/emote_cloud.png" id="67_ks8g6"]
+[ext_resource type="Script" uid="uid://cu0vd77gadktf" path="res://scenes/villager.gd" id="64_3kxc3"]
+[ext_resource type="Texture2D" uid="uid://cttwp74nd0wm4" path="res://assets/Emotes/emote_exclamation.png" id="65_t8bik"]
+[ext_resource type="Script" uid="uid://6iwojcblucg3" path="res://scenes/villager_2.gd" id="66_cjlmj"]
+[ext_resource type="Texture2D" uid="uid://ccjvif8q64wqw" path="res://assets/props/fire-2-pixilart.png" id="68_ydhfh"]
+[ext_resource type="Texture2D" uid="uid://c68kqve87p2vr" path="res://assets/props/pixilart-drawing.png" id="69_so1j7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sky72"]
 texture = ExtResource("2_1p5nq")
@@ -512,18 +513,31 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eu32t"]
 size = Vector2(26, 26)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r4raw"]
-atlas = ExtResource("65_nk3x5")
-region = Rect2(0, 0, 16, 16)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_ydhfh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_r4raw")
+"texture": ExtResource("65_t8bik")
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cjlmj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("68_ydhfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_ydhfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_so1j7")
+}],
+"loop": true,
+"name": &"move",
 "speed": 5.0
 }]
 
@@ -544,21 +558,6 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r7wpw"]
 size = Vector2(26, 26)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ps33n"]
-atlas = ExtResource("67_ks8g6")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_sjp0i"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ps33n")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -648,9 +647,17 @@ sprite_frames = SubResource("SpriteFrames_t8bik")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Villager/InteractionZone"]
 shape = SubResource("RectangleShape2D_eu32t")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Villager"]
-position = Vector2(8, -16)
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Villager/InteractionZone"]
+visible = false
+position = Vector2(5, -22)
 sprite_frames = SubResource("SpriteFrames_ydhfh")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Villager/InteractionZone"]
+visible = false
+position = Vector2(-43, -66.5)
+scale = Vector2(2.625, 2.71875)
+sprite_frames = SubResource("SpriteFrames_cjlmj")
+animation = &"move"
 
 [node name="Villager2" type="CharacterBody2D" parent="."]
 position = Vector2(-176, -120)
@@ -666,7 +673,3 @@ sprite_frames = SubResource("SpriteFrames_cjaay")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Villager2/InteractionZone"]
 shape = SubResource("RectangleShape2D_r7wpw")
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Villager2"]
-position = Vector2(8, -16)
-sprite_frames = SubResource("SpriteFrames_sjp0i")
