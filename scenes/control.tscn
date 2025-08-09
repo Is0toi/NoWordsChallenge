@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://cvgvy00cd3ci2" path="res://assets/Tiles/tile_0025.png" id="3_hob4j"]
 [ext_resource type="Texture2D" uid="uid://o2ija1fha77e" path="res://assets/Tiles/tile_0049.png" id="4_01bab"]
 [ext_resource type="Texture2D" uid="uid://diq46hu04qwmg" path="res://assets/Custom_Art/pixil-frame-0.png" id="4_nenke"]
-[ext_resource type="Texture2D" uid="uid://ci6q828di0wbc" path="res://assets/Tiles/tile_0003.png" id="5_exs80"]
 [ext_resource type="Texture2D" uid="uid://b0nl4wq1djjd6" path="res://assets/Tiles/tile_0012.png" id="6_01bab"]
+[ext_resource type="Texture2D" uid="uid://ci45rraoc4v75" path="res://assets/Tiles/tile_0007.png" id="6_dl5dp"]
 [ext_resource type="Script" uid="uid://c0lvlrjym5vi5" path="res://scenes/scripts/character_body_2d.gd" id="6_kql7n"]
 [ext_resource type="Texture2D" uid="uid://8udsllxmwj08" path="res://assets/Tiles/tile_0013.png" id="7_exs80"]
 [ext_resource type="Texture2D" uid="uid://byy5g7mgytu1c" path="res://assets/Tiles/tile_0016.png" id="7_hlutc"]
@@ -59,7 +59,7 @@
 [ext_resource type="Texture2D" uid="uid://ct1t71yq8ekd2" path="res://assets/Tiles/tile_0073.png" id="54_yddfj"]
 [ext_resource type="Texture2D" uid="uid://co4lc6dw6kx7y" path="res://assets/Custom_Art/pixil-frame-0 (4).png" id="57_ce2u3"]
 [ext_resource type="Texture2D" uid="uid://jge1r6jgsc4t" path="res://assets/Custom_Art/pixil-frame-0 (1).png" id="58_ce2u3"]
-[ext_resource type="PackedScene" uid="uid://dolh3ewernoar" path="res://scenes/apple.tscn" id="60_dl5dp"]
+[ext_resource type="PackedScene" path="res://scenes/apple.tscn" id="60_dl5dp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sky72"]
 texture = ExtResource("2_1p5nq")
@@ -80,7 +80,7 @@ texture = ExtResource("4_01bab")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eh0v1"]
-texture = ExtResource("5_exs80")
+texture = ExtResource("6_dl5dp")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
@@ -492,22 +492,34 @@ animation = &"new_animation"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/CharacterBody2D"]
 polygon = PackedVector2Array(5, 0, 2, 0, 0, 3, 0, 10, 1, 14, 2, 17, 8, 17, 11, 14, 11, 1, 8, 0)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Villager3" type="CharacterBody2D" parent="."]
 position = Vector2(-264, -116)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
-polygon = PackedVector2Array(-2, -9, -6, -7, -5, 1, -4, 6, 2, 6, 4, -6)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Villager3"]
+polygon = PackedVector2Array(-2, -9, -7, -7, -5, 1, -5, 7, 3, 7, 4, -8)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Villager3"]
 sprite_frames = SubResource("SpriteFrames_dl5dp")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+[node name="Apple" parent="." instance=ExtResource("60_dl5dp")]
+position = Vector2(-201, -297)
+
+[node name="Villager" type="CharacterBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Villager"]
+position = Vector2(-165, -116)
+polygon = PackedVector2Array(-2, -9, -7, -7, -5, 1, -5, 7, 3, 7, 4, -8)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Villager"]
 position = Vector2(-165, -116)
 sprite_frames = SubResource("SpriteFrames_vx2dq")
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
-position = Vector2(-345, -33)
-sprite_frames = SubResource("SpriteFrames_etixm")
+[node name="Villager2" type="CharacterBody2D" parent="."]
 
-[node name="Apple" parent="." instance=ExtResource("60_dl5dp")]
-position = Vector2(-200, -296)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Villager2"]
+position = Vector2(-342, -29)
+polygon = PackedVector2Array(-2, -9, -7, -7, -5, 1, -5, 7, 3, 7, 3.14494, 4.82572, 4, -8)
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Villager2"]
+position = Vector2(-343, -29)
+sprite_frames = SubResource("SpriteFrames_etixm")
