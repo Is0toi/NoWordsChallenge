@@ -1,15 +1,6 @@
 extends Node2D
 
-const TILE_SIZE = 32
-
-const WALKABLE_TILES = [Tile.Path, Tile.Floor]
-
-enum Tile {
-	Floor, 
-	Path, 
-	Wall, 
-	Ocean
-}
+const TILE_SIZE = 16
 
 @onready var tile_map = $TileMap
 @onready var player = $Player
@@ -20,8 +11,7 @@ var map = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	player_tile = player.position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -39,16 +29,12 @@ func _input(event):
 	elif event.is_action("Down"): 
 		try_move(0, 1)
 
+# please use collision2d objects to stop player from moving over walls
 func try_move(dx, dy): 
 	var x = player_tile.x + dx
 	var y = player_tile.y + dy
-	var tile_type = map[x][y]
+	player_tile = Vector2(x, y)
 	
-	if tile_type in WALKABLE_TILES and tile_type != Tile.Wall:
-		var blocked = false
-		if !blocked: 
-			player_tile = Vector2(x, y)
-		
 	update_visuals()
 
 func update_visuals(): 
@@ -62,10 +48,6 @@ func set_tile(x, y, id):
 	y = int(y)
 	if x < 0 or x >= map.size() or typeof(map[x]) != TYPE_ARRAY or y < 0 or y >= map[x].size():
 		print("Invalid map coordinate: (", x, ",", y, ")")
-		return
-	
-	if id < 0 or id >= Tile.size():
-		push_error("🚨 Invalid Tile ID: %s" % id)
 		return
 
 	map[int(x)][int(y)] = id
