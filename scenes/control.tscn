@@ -1,16 +1,16 @@
-[gd_scene load_steps=123 format=4 uid="uid://bi4wckfs54v2b"]
+[gd_scene load_steps=122 format=4 uid="uid://bi4wckfs54v2b"]
 
 [ext_resource type="Script" uid="uid://bpdlywn10n5sp" path="res://scenes/scripts/world.gd" id="1_lt2xq"]
 [ext_resource type="Texture2D" uid="uid://cmu0ablr5kslt" path="res://assets/Tiles/tile_0001.png" id="2_1p5nq"]
 [ext_resource type="Texture2D" uid="uid://cvgvy00cd3ci2" path="res://assets/Tiles/tile_0025.png" id="3_hob4j"]
 [ext_resource type="Texture2D" uid="uid://o2ija1fha77e" path="res://assets/Tiles/tile_0049.png" id="4_01bab"]
+[ext_resource type="Texture2D" uid="uid://diq46hu04qwmg" path="res://assets/Custom_Art/pixil-frame-0.png" id="4_nenke"]
 [ext_resource type="Texture2D" uid="uid://ci6q828di0wbc" path="res://assets/Tiles/tile_0003.png" id="5_exs80"]
 [ext_resource type="Texture2D" uid="uid://b0nl4wq1djjd6" path="res://assets/Tiles/tile_0012.png" id="6_01bab"]
 [ext_resource type="Script" uid="uid://c0lvlrjym5vi5" path="res://scenes/scripts/character_body_2d.gd" id="6_kql7n"]
 [ext_resource type="Texture2D" uid="uid://8udsllxmwj08" path="res://assets/Tiles/tile_0013.png" id="7_exs80"]
 [ext_resource type="Texture2D" uid="uid://bvkx4hvogfgxc" path="res://assets/Tiles/tile_0017.png" id="8_kql7n"]
 [ext_resource type="Texture2D" uid="uid://cphdd70trk31t" path="res://assets/Tiles/tile_0043.png" id="9_1l3m6"]
-[ext_resource type="Texture2D" uid="uid://b8l8nf14rdfjq" path="res://assets/pixilart-drawing (3).png" id="9_hob4j"]
 [ext_resource type="Texture2D" uid="uid://b10thd3iuu4qh" path="res://assets/Tiles/tile_0048.png" id="10_nenke"]
 [ext_resource type="Texture2D" uid="uid://cxpa447fudpix" path="res://assets/Tiles/tile_0074.png" id="11_ce2u3"]
 [ext_resource type="Texture2D" uid="uid://x3uxt0moio7k" path="res://assets/Tiles/tile_0075.png" id="12_hlutc"]
@@ -56,7 +56,6 @@
 [ext_resource type="Texture2D" uid="uid://c3000voms1f22" path="res://assets/Tiles/tile_0063.png" id="52_lmvqu"]
 [ext_resource type="Texture2D" uid="uid://dy47esc1b7i7c" path="res://assets/Tiles/tile_0072.png" id="53_4u7im"]
 [ext_resource type="Texture2D" uid="uid://ct1t71yq8ekd2" path="res://assets/Tiles/tile_0073.png" id="54_yddfj"]
-[ext_resource type="Texture2D" uid="uid://bvcmo7rtcedv0" path="res://assets/Custom_Art/pixil-frame-0 (2).png" id="57_nenke"]
 [ext_resource type="Texture2D" uid="uid://jge1r6jgsc4t" path="res://assets/Custom_Art/pixil-frame-0 (1).png" id="58_ce2u3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sky72"]
@@ -68,7 +67,7 @@ texture = ExtResource("3_hob4j")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ce2u3"]
-texture = ExtResource("9_hob4j")
+texture = ExtResource("4_nenke")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
@@ -390,7 +389,7 @@ sources/49 = SubResource("TileSetAtlasSource_k4skk")
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("57_nenke")
+"texture": null
 }],
 "loop": true,
 "name": &"new_animation",
