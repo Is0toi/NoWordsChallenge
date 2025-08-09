@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dijkf0vcx0dxx"
-path="res://.godot/imported/pixilart-drawing (3).png-ad8ec491927469b5a765e0295e754951.ctex"
+uid="uid://chhlbrabunl3n"
+path="res://.godot/imported/emote_faceAngry.png-dab4dd39ad64e9edb338ce9e9c0612b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pixilart-drawing (3).png"
-dest_files=["res://.godot/imported/pixilart-drawing (3).png-ad8ec491927469b5a765e0295e754951.ctex"]
+source_file="res://assets/Emotes/emote_faceAngry.png"
+dest_files=["res://.godot/imported/emote_faceAngry.png-dab4dd39ad64e9edb338ce9e9c0612b1.ctex"]
 
 [params]
 
