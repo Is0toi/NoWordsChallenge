@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://bi4wckfs54v2b"]
+[gd_scene load_steps=116 format=4 uid="uid://bi4wckfs54v2b"]
 
 [ext_resource type="Script" uid="uid://bpdlywn10n5sp" path="res://scenes/scripts/world.gd" id="1_lt2xq"]
 [ext_resource type="Texture2D" uid="uid://cmu0ablr5kslt" path="res://assets/Tiles/tile_0001.png" id="2_1p5nq"]
@@ -10,7 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://8udsllxmwj08" path="res://assets/Tiles/tile_0013.png" id="7_exs80"]
 [ext_resource type="Texture2D" uid="uid://bvkx4hvogfgxc" path="res://assets/Tiles/tile_0017.png" id="8_kql7n"]
 [ext_resource type="Texture2D" uid="uid://cphdd70trk31t" path="res://assets/Tiles/tile_0043.png" id="9_1l3m6"]
-[ext_resource type="Texture2D" uid="uid://dijkf0vcx0dxx" path="res://assets/pixilart-drawing (3).png" id="9_hob4j"]
+[ext_resource type="Texture2D" uid="uid://dijkf0vcx0dxx" path="res://assets/Custom_Art/pixilart-drawing (3).png" id="9_hob4j"]
+[ext_resource type="PackedScene" uid="uid://qwtuwln7ga6d" path="res://scenes/ocean.tscn" id="10_01bab"]
 [ext_resource type="Texture2D" uid="uid://b10thd3iuu4qh" path="res://assets/Tiles/tile_0048.png" id="10_nenke"]
 [ext_resource type="Texture2D" uid="uid://cxpa447fudpix" path="res://assets/Tiles/tile_0074.png" id="11_ce2u3"]
 [ext_resource type="Texture2D" uid="uid://x3uxt0moio7k" path="res://assets/Tiles/tile_0075.png" id="12_hlutc"]
@@ -383,3 +384,6 @@ sprite_frames = SubResource("SpriteFrames_hob4j")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/CharacterBody2D"]
 position = Vector2(5, 8)
 shape = SubResource("RectangleShape2D_hob4j")
+
+[node name="AnimatedSprite2D" parent="." instance=ExtResource("10_01bab")]
+position = Vector2(56, -56)
