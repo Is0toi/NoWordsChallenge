@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b0nl4wq1djjd6" path="res://assets/Tiles/tile_0012.png" id="6_01bab"]
 [ext_resource type="Script" uid="uid://c0lvlrjym5vi5" path="res://scenes/scripts/character_body_2d.gd" id="6_kql7n"]
 [ext_resource type="Texture2D" uid="uid://8udsllxmwj08" path="res://assets/Tiles/tile_0013.png" id="7_exs80"]
+[ext_resource type="Texture2D" uid="uid://byy5g7mgytu1c" path="res://assets/Tiles/tile_0016.png" id="7_hlutc"]
 [ext_resource type="Texture2D" uid="uid://bvkx4hvogfgxc" path="res://assets/Tiles/tile_0017.png" id="8_kql7n"]
 [ext_resource type="Texture2D" uid="uid://cphdd70trk31t" path="res://assets/Tiles/tile_0043.png" id="9_1l3m6"]
 [ext_resource type="Texture2D" uid="uid://b10thd3iuu4qh" path="res://assets/Tiles/tile_0048.png" id="10_nenke"]
@@ -82,6 +83,10 @@ texture = ExtResource("5_exs80")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dl5dp"]
+texture = ExtResource("7_hlutc")
+0:0/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tac8f"]
 texture = ExtResource("6_01bab")
 0:0/0 = 0
@@ -109,6 +114,7 @@ sources/6 = SubResource("TileSetAtlasSource_vb5ih")
 sources/7 = SubResource("TileSetAtlasSource_6pn8l")
 sources/8 = SubResource("TileSetAtlasSource_2bn8p")
 sources/10 = SubResource("TileSetAtlasSource_ce2u3")
+sources/4 = SubResource("TileSetAtlasSource_dl5dp")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_13jsj"]
 texture = ExtResource("10_nenke")
@@ -133,6 +139,10 @@ texture = ExtResource("12_hlutc")
 texture = ExtResource("13_dl5dp")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f1e5p"]
+texture = ExtResource("7_hlutc")
+0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xl5uj"]
 texture = ExtResource("14_f1e5p")
@@ -385,6 +395,7 @@ sources/46 = SubResource("TileSetAtlasSource_oyiun")
 sources/47 = SubResource("TileSetAtlasSource_3hr0c")
 sources/48 = SubResource("TileSetAtlasSource_jafnj")
 sources/49 = SubResource("TileSetAtlasSource_k4skk")
+sources/13 = SubResource("TileSetAtlasSource_f1e5p")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hob4j"]
 animations = [{
