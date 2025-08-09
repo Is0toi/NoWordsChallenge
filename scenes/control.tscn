@@ -1,4 +1,4 @@
-[gd_scene load_steps=134 format=4 uid="uid://bi4wckfs54v2b"]
+[gd_scene load_steps=144 format=4 uid="uid://bi4wckfs54v2b"]
 
 [ext_resource type="Script" uid="uid://bpdlywn10n5sp" path="res://scenes/scripts/world.gd" id="1_lt2xq"]
 [ext_resource type="Texture2D" uid="uid://cmu0ablr5kslt" path="res://assets/Tiles/tile_0001.png" id="2_1p5nq"]
@@ -60,9 +60,13 @@
 [ext_resource type="Texture2D" uid="uid://ct1t71yq8ekd2" path="res://assets/Tiles/tile_0073.png" id="54_yddfj"]
 [ext_resource type="Texture2D" uid="uid://co4lc6dw6kx7y" path="res://assets/Custom_Art/pixil-frame-0 (4).png" id="57_ce2u3"]
 [ext_resource type="Texture2D" uid="uid://jge1r6jgsc4t" path="res://assets/Custom_Art/pixil-frame-0 (1).png" id="58_ce2u3"]
-[ext_resource type="PackedScene" path="res://scenes/apple.tscn" id="60_dl5dp"]
-[ext_resource type="Script" uid="uid://byyjpaaeylqqv" path="res://scenes/villager_3.gd" id="60_oc3vt"]
+[ext_resource type="PackedScene" uid="uid://dolh3ewernoar" path="res://scenes/apple.tscn" id="60_dl5dp"]
+[ext_resource type="Script" path="res://scenes/villager_3.gd" id="60_oc3vt"]
 [ext_resource type="Texture2D" uid="uid://dc5s5vqo0ugng" path="res://assets/Emotes/emote_cash.png" id="60_vx2dq"]
+[ext_resource type="Script" uid="uid://cu0vd77gadktf" path="res://scenes/villager.gd" id="64_3kxc3"]
+[ext_resource type="Texture2D" uid="uid://bosw48uttu5n7" path="res://assets/Emotes/emote_circle.png" id="65_nk3x5"]
+[ext_resource type="Script" uid="uid://6iwojcblucg3" path="res://scenes/villager_2.gd" id="66_cjlmj"]
+[ext_resource type="Texture2D" uid="uid://dheo5j48vt8j3" path="res://assets/Emotes/emote_cloud.png" id="67_ks8g6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sky72"]
 texture = ExtResource("2_1p5nq")
@@ -453,30 +457,66 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f1e5p"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_d77h8"]
 atlas = ExtResource("58_ce2u3")
-region = Rect2(0, 0, 32, 32)
+region = Rect2(64, 32, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_vx2dq"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_t8bik"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f1e5p")
+"texture": SubResource("AtlasTexture_d77h8")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oc3vt"]
-atlas = ExtResource("58_ce2u3")
-region = Rect2(64, 0, 32, 32)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eu32t"]
+size = Vector2(26, 26)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_etixm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4raw"]
+atlas = ExtResource("65_nk3x5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ydhfh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oc3vt")
+"texture": SubResource("AtlasTexture_r4raw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_so1j7"]
+atlas = ExtResource("58_ce2u3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cjaay"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_so1j7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7wpw"]
+size = Vector2(26, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ps33n"]
+atlas = ExtResource("67_ks8g6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sjp0i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ps33n")
 }],
 "loop": true,
 "name": &"default",
@@ -538,7 +578,6 @@ position = Vector2(1, -1.5)
 shape = SubResource("RectangleShape2D_4w3tc")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Villager3"]
-visible = false
 position = Vector2(6, -17)
 sprite_frames = SubResource("SpriteFrames_4w3tc")
 
@@ -546,21 +585,39 @@ sprite_frames = SubResource("SpriteFrames_4w3tc")
 position = Vector2(-201, -297)
 
 [node name="Villager" type="CharacterBody2D" parent="."]
+position = Vector2(-320, -16)
+script = ExtResource("64_3kxc3")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Villager"]
-position = Vector2(-165, -116)
 polygon = PackedVector2Array(-2, -9, -7, -7, -5, 1, -5, 7, 3, 7, 4, -8)
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Villager"]
+sprite_frames = SubResource("SpriteFrames_t8bik")
+
+[node name="InteractionZone" type="Area2D" parent="Villager"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Villager/InteractionZone"]
+shape = SubResource("RectangleShape2D_eu32t")
+
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Villager"]
-position = Vector2(-165, -116)
-sprite_frames = SubResource("SpriteFrames_vx2dq")
+position = Vector2(8, -16)
+sprite_frames = SubResource("SpriteFrames_ydhfh")
 
 [node name="Villager2" type="CharacterBody2D" parent="."]
+position = Vector2(-176, -120)
+script = ExtResource("66_cjlmj")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Villager2"]
-position = Vector2(-342, -29)
-polygon = PackedVector2Array(-2, -9, -7, -7, -5, 1, -5, 7, 3, 7, 3.14494, 4.82572, 4, -8)
+polygon = PackedVector2Array(-2, -9, -7, -7, -5, 1, -5, 7, 3, 7, 4, -8)
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Villager2"]
-position = Vector2(-343, -29)
-sprite_frames = SubResource("SpriteFrames_etixm")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Villager2"]
+sprite_frames = SubResource("SpriteFrames_cjaay")
+
+[node name="InteractionZone" type="Area2D" parent="Villager2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Villager2/InteractionZone"]
+shape = SubResource("RectangleShape2D_r7wpw")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Villager2"]
+position = Vector2(8, -16)
+sprite_frames = SubResource("SpriteFrames_sjp0i")

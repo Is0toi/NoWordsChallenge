@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckuwa443mflje"]
+[gd_scene load_steps=6 format=3 uid="uid://cdqavc1jex5vg"]
 
 [ext_resource type="Texture2D" uid="uid://jge1r6jgsc4t" path="res://assets/Custom_Art/pixil-frame-0 (1).png" id="1_pqyuy"]
-[ext_resource type="Script" uid="uid://4r3dpnx2n7k1" path="res://scenes/scripts/animated_sprite_2d.gd" id="2_867cg"]
+[ext_resource type="Script" path="res://scenes/scripts/animated_sprite_2d.gd" id="2_867cg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ld0dh"]
 atlas = ExtResource("1_pqyuy")
