@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=4 uid="uid://bi4wckfs54v2b"]
+[gd_scene load_steps=148 format=4 uid="uid://bi4wckfs54v2b"]
 
 [ext_resource type="Script" uid="uid://bpdlywn10n5sp" path="res://scenes/scripts/world.gd" id="1_lt2xq"]
 [ext_resource type="Texture2D" uid="uid://cmu0ablr5kslt" path="res://assets/Tiles/tile_0001.png" id="2_1p5nq"]
@@ -61,12 +61,12 @@
 [ext_resource type="Texture2D" uid="uid://co4lc6dw6kx7y" path="res://assets/Custom_Art/pixil-frame-0 (4).png" id="57_ce2u3"]
 [ext_resource type="Texture2D" uid="uid://jge1r6jgsc4t" path="res://assets/Custom_Art/pixil-frame-0 (1).png" id="58_ce2u3"]
 [ext_resource type="PackedScene" uid="uid://dolh3ewernoar" path="res://scenes/apple.tscn" id="60_dl5dp"]
-[ext_resource type="Script" uid="uid://byyjpaaeylqqv" path="res://scenes/villager_3.gd" id="60_oc3vt"]
+[ext_resource type="Script" path="res://scenes/villager_3.gd" id="60_oc3vt"]
 [ext_resource type="Texture2D" uid="uid://dc5s5vqo0ugng" path="res://assets/Emotes/emote_cash.png" id="60_vx2dq"]
 [ext_resource type="Texture2D" uid="uid://qn1ks7acskfa" path="res://assets/Emotes/emote_heart.png" id="63_nk3x5"]
-[ext_resource type="Script" uid="uid://cu0vd77gadktf" path="res://scenes/villager.gd" id="64_3kxc3"]
+[ext_resource type="Script" path="res://scenes/villager.gd" id="64_3kxc3"]
 [ext_resource type="Texture2D" uid="uid://bosw48uttu5n7" path="res://assets/Emotes/emote_circle.png" id="65_nk3x5"]
-[ext_resource type="Script" uid="uid://6iwojcblucg3" path="res://scenes/villager_2.gd" id="66_cjlmj"]
+[ext_resource type="Script" path="res://scenes/villager_2.gd" id="66_cjlmj"]
 [ext_resource type="Texture2D" uid="uid://dheo5j48vt8j3" path="res://assets/Emotes/emote_cloud.png" id="67_ks8g6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sky72"]
@@ -473,6 +473,27 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="GDScript" id="GDScript_nk3x5"]
+script/source = "extends Area2D
+
+@onready var player = get_node(\"./World/CharacterBody2D\")
+@onready var area2d = get_node(\".\")
+@onready var apple = get_node(\"Apple\")
+@onready var player_in_range = false
+
+func _on_body_entered(body):
+	if body.is_in_group(\"player\"):
+		player_in_range = true
+
+func _on_body_exited(body):
+	if body.is_in_group(\"player\"):
+		player_in_range = false
+		
+func _process(delta):
+	if player_in_range and Input.is_action_just_pressed(\"interact\"):
+		apple.visible = false
+"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_d77h8"]
 atlas = ExtResource("58_ce2u3")
 region = Rect2(64, 32, 32, 32)
@@ -603,9 +624,14 @@ visible = false
 position = Vector2(8, -20)
 sprite_frames = SubResource("SpriteFrames_3kxc3")
 
-[node name="Apple" parent="." instance=ExtResource("60_dl5dp")]
-visible = false
+[node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-201, -297)
+script = SubResource("GDScript_nk3x5")
+
+[node name="Apple" parent="Area2D" instance=ExtResource("60_dl5dp")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-17, -24, -23, 7, 0, 23, 26, 0, 4, -26)
 
 [node name="Villager" type="CharacterBody2D" parent="."]
 position = Vector2(-320, -16)
