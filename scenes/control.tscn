@@ -1,4 +1,4 @@
-[gd_scene load_steps=148 format=4 uid="uid://bi4wckfs54v2b"]
+[gd_scene load_steps=147 format=4 uid="uid://bi4wckfs54v2b"]
 
 [ext_resource type="Script" uid="uid://bpdlywn10n5sp" path="res://scenes/scripts/world.gd" id="1_lt2xq"]
 [ext_resource type="Texture2D" uid="uid://cmu0ablr5kslt" path="res://assets/Tiles/tile_0001.png" id="2_1p5nq"]
@@ -62,7 +62,7 @@
 [ext_resource type="Texture2D" uid="uid://jge1r6jgsc4t" path="res://assets/Custom_Art/pixil-frame-0 (1).png" id="58_ce2u3"]
 [ext_resource type="PackedScene" uid="uid://dolh3ewernoar" path="res://scenes/apple.tscn" id="60_dl5dp"]
 [ext_resource type="Script" uid="uid://byyjpaaeylqqv" path="res://scenes/villager_3.gd" id="60_oc3vt"]
-[ext_resource type="Texture2D" uid="uid://dc5s5vqo0ugng" path="res://assets/Emotes/emote_cash.png" id="60_vx2dq"]
+[ext_resource type="Texture2D" uid="uid://c3464rxnawejr" path="res://assets/Emotes/emote_faceSad.png" id="62_cjlmj"]
 [ext_resource type="Texture2D" uid="uid://qn1ks7acskfa" path="res://assets/Emotes/emote_heart.png" id="63_nk3x5"]
 [ext_resource type="Script" uid="uid://cu0vd77gadktf" path="res://scenes/villager.gd" id="64_3kxc3"]
 [ext_resource type="Texture2D" uid="uid://cttwp74nd0wm4" path="res://assets/Emotes/emote_exclamation.png" id="65_t8bik"]
@@ -444,15 +444,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4w3tc"]
 size = Vector2(22, 23)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_etixm"]
-atlas = ExtResource("60_vx2dq")
-region = Rect2(0, 0, 16, 16)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_4w3tc"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_etixm")
+"texture": ExtResource("62_cjlmj")
 }],
 "loop": true,
 "name": &"default",
