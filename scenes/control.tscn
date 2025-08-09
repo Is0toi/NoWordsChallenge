@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bvkx4hvogfgxc" path="res://assets/Tiles/tile_0017.png" id="8_kql7n"]
 [ext_resource type="Texture2D" uid="uid://cphdd70trk31t" path="res://assets/Tiles/tile_0043.png" id="9_1l3m6"]
 [ext_resource type="Texture2D" uid="uid://dijkf0vcx0dxx" path="res://assets/Custom_Art/pixilart-drawing (3).png" id="9_hob4j"]
+[ext_resource type="PackedScene" uid="uid://qwtuwln7ga6d" path="res://scenes/ocean.tscn" id="10_01bab"]
 [ext_resource type="Texture2D" uid="uid://b10thd3iuu4qh" path="res://assets/Tiles/tile_0048.png" id="10_nenke"]
 [ext_resource type="Texture2D" uid="uid://cxpa447fudpix" path="res://assets/Tiles/tile_0074.png" id="11_ce2u3"]
 [ext_resource type="Texture2D" uid="uid://x3uxt0moio7k" path="res://assets/Tiles/tile_0075.png" id="12_hlutc"]

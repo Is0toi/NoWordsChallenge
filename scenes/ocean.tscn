@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://qwtuwln7ga6d"]
+
+[ext_resource type="Texture2D" uid="uid://bi1dhuckts2hb" path="res://assets/props/pixilart-drawing (3).png" id="1_mn261"]
+[ext_resource type="Texture2D" uid="uid://b3tivj3nnblth" path="res://assets/props/pixilart-drawing (4).png" id="2_a1ohp"]
+[ext_resource type="Script" uid="uid://d13n1qly0x3qo" path="res://scenes/scripts/ocean.gd" id="3_mn261"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1ohp"]
+atlas = ExtResource("1_mn261")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogne1"]
+atlas = ExtResource("2_a1ohp")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vjho5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1ohp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogne1")
+}],
+"loop": true,
+"name": &"wave",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_vjho5")
+animation = &"wave"
+speed_scale = 0.2
+script = ExtResource("3_mn261")
