@@ -393,7 +393,7 @@ animations = [{
 "texture": ExtResource("57_nenke")
 }],
 "loop": true,
-"name": &"default",
+"name": &"new_animation",
 "speed": 5.0
 }]
 
@@ -475,6 +475,7 @@ zoom = Vector2(3, 3)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="World/CharacterBody2D"]
 position = Vector2(6, 9)
 sprite_frames = SubResource("SpriteFrames_hob4j")
+animation = &"new_animation"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/CharacterBody2D"]
 polygon = PackedVector2Array(5, 0, 2, 0, 0, 3, 0, 10, 1, 14, 2, 17, 8, 17, 11, 14, 11, 1, 8, 0)
