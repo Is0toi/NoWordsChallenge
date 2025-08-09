@@ -11,35 +11,12 @@ var map = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	player_tile = player.position
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
-func _input(event): 
-	if !event.is_pressed(): 
-		return
-	if event.is_action("Left"): 
-		try_move(-1, 0)
-	elif event.is_action("Right"): 
-		try_move(1, 0)
-	elif event.is_action("Up"): 
-		try_move(0, -1)
-	elif event.is_action("Down"): 
-		try_move(0, 1)
-
-# please use collision2d objects to stop player from moving over walls
-func try_move(dx, dy): 
-	var x = player_tile.x + dx
-	var y = player_tile.y + dy
-	player_tile = Vector2(x, y)
-	
-	update_visuals()
-
-func update_visuals(): 
-	player.position = player_tile * TILE_SIZE + Vector2(TILE_SIZE / 2, TILE_SIZE / 2)
-	
 func tile_to_id(x: int, y: int) -> int:
 	return x + y # * int(level_size.x)
 		
