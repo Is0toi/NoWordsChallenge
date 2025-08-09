@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=3 uid="uid://cneaeq57fho8k"]
+
+[ext_resource type="Texture2D" uid="uid://ch17rnvukm426" path="res://assets/props/fire-pixilart.png" id="1_rach5"]
+[ext_resource type="Texture2D" uid="uid://ccjvif8q64wqw" path="res://assets/props/fire-2-pixilart.png" id="2_txieb"]
+[ext_resource type="Texture2D" uid="uid://c68kqve87p2vr" path="res://assets/props/pixilart-drawing.png" id="3_4l61p"]
+[ext_resource type="Script" uid="uid://by8dkk8a51tjt" path="res://scenes/scripts/fire.gd" id="4_10wrr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6cef"]
+atlas = ExtResource("1_rach5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tefrs"]
+atlas = ExtResource("2_txieb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ra8l4"]
+atlas = ExtResource("3_4l61p")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4bb1p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6cef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tefrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ra8l4")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_4bb1p")
+animation = &"move"
+script = ExtResource("4_10wrr")
