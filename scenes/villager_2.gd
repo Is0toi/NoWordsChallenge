@@ -15,5 +15,8 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	if body.is_in_group("player"):
 		player_in_range = false
+<<<<<<< HEAD
 		
 	
+=======
+>>>>>>> 24452e950d9777b6c8862c0a8b39e5a722112d0b
