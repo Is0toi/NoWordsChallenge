@@ -492,8 +492,13 @@ animation = &"new_animation"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/CharacterBody2D"]
 polygon = PackedVector2Array(5, 0, 2, 0, 0, 3, 0, 10, 1, 14, 2, 17, 8, 17, 11, 14, 11, 1, 8, 0)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(-264, -116)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
+polygon = PackedVector2Array(-2, -9, -6, -7, -5, 1, -4, 6, 2, 6, 4, -6)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_dl5dp")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
