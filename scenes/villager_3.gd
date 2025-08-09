@@ -21,6 +21,7 @@ func _process(delta):
 	if player_in_range and Input.is_action_just_pressed("interact"):
 		if apple.visible:
 			bubble.visible = !bubble.visible
+	
 		else:
 			bubble.visible = false
 			done.visible = !done.visible

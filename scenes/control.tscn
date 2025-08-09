@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=4 uid="uid://bi4wckfs54v2b"]
+[gd_scene load_steps=148 format=4 uid="uid://bi4wckfs54v2b"]
 
 [ext_resource type="Script" uid="uid://bpdlywn10n5sp" path="res://scenes/scripts/world.gd" id="1_lt2xq"]
 [ext_resource type="Texture2D" uid="uid://cmu0ablr5kslt" path="res://assets/Tiles/tile_0001.png" id="2_1p5nq"]
@@ -477,23 +477,20 @@ animations = [{
 [sub_resource type="GDScript" id="GDScript_nk3x5"]
 script/source = "extends Area2D
 
-@onready var player = get_node(\"./World/CharacterBody2D\")
-@onready var area2d = get_node(\".\")
-@onready var apple = get_node(\"Apple\")
-@onready var player_in_range = false
+@onready var apple: Node2D = $\"../Apple\"
+var player_in_range := false
+
+func _ready():
+	body_entered.connect(_on_body_entered)  # connect the signal
 
 func _on_body_entered(body):
 	if body.is_in_group(\"player\"):
 		player_in_range = true
-
-func _on_body_exited(body):
-	if body.is_in_group(\"player\"):
-		player_in_range = false
-		
-func _process(delta):
-	if player_in_range and Input.is_action_just_pressed(\"interact\"):
-		apple.visible = false
+		apple.visible = false  # Hide apple immediately
 "
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cjlmj"]
+size = Vector2(32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d77h8"]
 atlas = ExtResource("58_ce2u3")
@@ -627,10 +624,9 @@ sprite_frames = SubResource("SpriteFrames_3kxc3")
 position = Vector2(-201, -297)
 script = SubResource("GDScript_nk3x5")
 
-[node name="Apple" parent="Area2D" instance=ExtResource("60_dl5dp")]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(-17, -24, -23, 7, 0, 23, 26, 0, 4, -26)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_cjlmj")
 
 [node name="Villager" type="CharacterBody2D" parent="."]
 position = Vector2(-320, -16)
@@ -673,3 +669,6 @@ sprite_frames = SubResource("SpriteFrames_cjaay")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Villager2/InteractionZone"]
 shape = SubResource("RectangleShape2D_r7wpw")
+
+[node name="Apple" parent="." instance=ExtResource("60_dl5dp")]
+position = Vector2(-200, -296)
