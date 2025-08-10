@@ -18,4 +18,4 @@ We decided to create a game inspired by our adventure, in which the player is al
 - time crunch: important to stay organized
 - godot file management: very difficult to organize heads and collaboration--also important to stay organized, and that everyone knows what they should be working on and what everyone else should be working on
 
-## Credits: David Shi, Jessie Wang, Charlotte Woodrum
+#### Credits: David Shi, Jessie Wang, Charlotte Woodrum
